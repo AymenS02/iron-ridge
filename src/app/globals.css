@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f3f7f3;
+  --surface-strong: #e4eee6;
+  --foreground: #1a1a1a;
+  --muted: #56625b;
+  --line: #dce5dd;
+
+  /* Text and icons on page backgrounds */
+  --accent: #006b33;
+  /* Filled buttons. #0B8A3E is under 4.5:1 with white text, so buttons use the dark green */
+  --action: #006b33;
+  --action-hover: #00572a;
+  --on-action: #ffffff;
+
+  /* Decorative peak layers, back to front */
+  --peak-back: #a8d5b5;
+  --peak-mid: #0b8a3e;
+  --peak-front: #006b33;
+
+  /* Full-bleed bands */
+  --band: #006b33;
+  --on-band: #ffffff;
+  --on-band-muted: #d8eddf;
+  --band-deep: #1a1a1a;
+}
+
+.dark {
+  --background: #0d1310;
+  --surface: #141c17;
+  --surface-strong: #1c2720;
+  --foreground: #eff4f0;
+  --muted: #a9b6ae;
+  --line: #2b3830;
+
+  --accent: #8bdba8;
+  --action: #3dbe72;
+  --action-hover: #5ad08b;
+  --on-action: #07120b;
+
+  --peak-back: #1f5c3a;
+  --peak-mid: #0b8a3e;
+  --peak-front: #3dbe72;
+
+  --band: #0f3a24;
+  --on-band: #ffffff;
+  --on-band-muted: #c4e0cd;
+  --band-deep: #060a07;
 }
 
 @theme inline {
+  --color-brand-green: #0b8a3e;
+  --color-brand-dark: #006b33;
+  --color-brand-light: #a8d5b5;
+  --color-brand-ink: #1a1a1a;
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-on-action: var(--on-action);
+  --color-peak-back: var(--peak-back);
+  --color-peak-mid: var(--peak-mid);
+  --color-peak-front: var(--peak-front);
+  --color-band: var(--band);
+  --color-on-band: var(--on-band);
+  --color-on-band-muted: var(--on-band-muted);
+  --color-band-deep: var(--band-deep);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-archivo);
 }
